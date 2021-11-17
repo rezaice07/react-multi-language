@@ -1,23 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
+import { useTranslation } from 'react-i18next';
 
 function App() {
+  const {t, i18n} = useTranslation();
+
+  const handleClick=(language)=>{
+    //console.log(language)
+    i18n.changeLanguage(language);
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={()=>handleClick('en')}> English</button>
+      <button onClick={()=>handleClick('bn')}> Bangla</button>  
+
+      <hr />
+      <div>{t('Thanks.1')}</div>   
+      <div>{t('Thank You so much.1')}</div>   
     </div>
   );
 }
