@@ -3,13 +3,13 @@ import './App.css';
 import { useTranslation } from 'react-i18next';
 import Greeting from './Greeting';
 
-function App() {
-  const {t, i18n} = useTranslation();
+class App extends  Component() {
+  // const {t, i18n} = useTranslation();
 
-  const handleClick=(language)=>{
-    //console.log(language)
-    i18n.changeLanguage(language);
-  }
+  // const handleClick=(language)=>{
+  //   //console.log(language)
+  //   i18n.changeLanguage(language);
+  // }
   return (
     <div className="App">
       {/* <button onClick={()=>handleClick('en')}> English</button>
