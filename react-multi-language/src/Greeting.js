@@ -1,30 +1,21 @@
 import React, { Component } from 'react'
-import { withTranslation } from 'react-i18next';
+import i18next from 'i18next';
 
 class Greeting extends Component {
-    
-    handleClick=(language)=>{
-        /*
-        const { i18n } = this.props;
-        //console.log(language)
-        i18n.changeLanguage(language);
 
-        */
-      }
-
+    componentDidMount = () => {
+        //i18next.loadNamespaces('common');
+    }
     render() {
-        const { t } = this.props;
         return (
             <div>
-                <button onClick={()=>this.handleClick('en')}> English</button>
-                <button onClick={()=>this.handleClick('bn')}> Bangla</button>
-                <hr />
-
-                <div>{t('Thanks.1')}</div>   
-                <div>{t('Thank You so much.1')}</div>  
+                <div>{i18next.t('WelcometoReact')}</div>
+                <div>{i18next.t('Thanks')}</div>
+                <div>{i18next.t('Welcome to multi language')}</div>
             </div>
         )
     }
 }
 
-export default  withTranslation(Greeting)
+export default Greeting
+
